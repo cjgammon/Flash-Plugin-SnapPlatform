@@ -1697,7 +1697,7 @@ function SVGAnim(data, w, h, fps, params) {
     if (autoplay) {
         instance.play();
     } else {
-        interval();
+        instance.stop();
     }
 
 }
