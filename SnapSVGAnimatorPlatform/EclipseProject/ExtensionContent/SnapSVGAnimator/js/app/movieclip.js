@@ -2,7 +2,8 @@
 var MovieClip = function (commandTimeline, s, resourceManager, objectID, name, transform) {
     var i,
         transformData,
-        transformArray;
+        transformArray,
+        attrs = {'class': 'movieclip', 'token': this.id};
         parentEl = s.type == 'svg' ? s : s.el;  //parent is stage if svg
 
     if (objectID) {
@@ -13,8 +14,12 @@ var MovieClip = function (commandTimeline, s, resourceManager, objectID, name, t
       this.name = name;
     }
 
+    if(name !== undefined) {
+        attrs.class = attrs.class + ' ' + this.name
+    }
+
     this.el = parentEl.g();
-    this.el.attr({'class': 'movieclip', 'token': this.id});
+    this.el.attr(attrs);
     this.transform = transform;
 
     this.m_timeline = commandTimeline;
