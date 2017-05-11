@@ -16,7 +16,6 @@ function SVGAnim(data, w, h, fps, params) {
     instance.version = '1.2.1';
 
     msg = 'Snap.svg Animator v' + instance.version;
-    console.log("%c" + msg, "color:" + color + ";font-weight:bold;");
 
     params = params|| {};
     fps = fps || 24;
