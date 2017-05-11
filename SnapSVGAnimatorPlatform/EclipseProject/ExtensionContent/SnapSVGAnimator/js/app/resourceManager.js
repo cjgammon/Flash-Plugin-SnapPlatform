@@ -7,8 +7,8 @@ var ResourceManager = function (data) {
     this.m_bitmaps = [];
     this.m_text = [];
     this.m_data = data;
-    
-    //Parse shapes and movieClips	
+
+    //Parse shapes and movieClips
     for(var shapeIndex =0; shapeIndex < this.m_data.DOMDocument.Shape.length; shapeIndex++)
     {
         id = this.m_data.DOMDocument.Shape[shapeIndex].charid;
@@ -29,7 +29,7 @@ var ResourceManager = function (data) {
         var textData = this.m_data.DOMDocument.Text[textIndex];
         this.m_text[id] = textData;
     }
-    
+
     if(this.m_data.DOMDocument.Timeline !== undefined)
     {
         for(var movieClipIndex =0; movieClipIndex < this.m_data.DOMDocument.Timeline.length - 1; movieClipIndex++)
@@ -39,8 +39,6 @@ var ResourceManager = function (data) {
             this.m_movieClips[id] = movieClipData;
         }
     }
-
-    console.log(this.m_data.DOMDocument);
 };
 
 //Member functions
