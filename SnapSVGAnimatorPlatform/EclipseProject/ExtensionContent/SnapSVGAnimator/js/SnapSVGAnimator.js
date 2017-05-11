@@ -560,7 +560,7 @@ var MovieClip = function (commandTimeline, s, resourceManager, objectID, name, t
     var i,
         transformData,
         transformArray,
-        attrs = {'class': 'movieclip', 'token': this.id};
+        attrs;
         parentEl = s.type == 'svg' ? s : s.el;  //parent is stage if svg
 
     if (objectID) {
@@ -570,6 +570,8 @@ var MovieClip = function (commandTimeline, s, resourceManager, objectID, name, t
     if (name) {
       this.name = name;
     }
+
+    attrs = {'class': 'movieclip', 'token': this.id};
 
     if(name !== undefined) {
         attrs.class = attrs.class + ' ' + this.name
